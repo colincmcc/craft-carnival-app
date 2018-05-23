@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import styled, {keyframes} from 'styled-components'
 
-import sunburst from '../../assets/images/cc-sunburst-solo-2.png'
-import backgroundImg from '../../assets/images/craft-carnival-bg-v3-01.png';
-import backgroundImg2 from '../../assets/images/craft-carnival-bg-v4-01.png';
+import ShareButton from '../common/Share_Button'
 import twoeight from '../../assets/images/2to8.svg'
 import june16 from '../../assets/images/june16.svg'
-import circle from '../../assets/images/circle-01.svg'
+import ccLogo from '../../assets/images/craft-carnival.svg'
 
 export default class Header extends Component{
 
@@ -16,14 +14,14 @@ export default class Header extends Component{
 
         return(
             <LogoWrapper id="header">
-                <HeaderBg src={sunburst} /> 
                 <Logo id="logoWrapper">
 
-                    <LogoImg src={homeEdge.acf.header_logo.url} alt="" />
+                    <LogoImg src={ccLogo} alt="" />
                     <BottomLogo>
                         <LogoImg className="alt1"  src={june16} /> <LogoImg className="alt2"  src={twoeight} />
                     </BottomLogo>
                 </Logo>
+                <ShareButton />
             </LogoWrapper>
 
         )
@@ -31,23 +29,23 @@ export default class Header extends Component{
 }
 
 const LogoWrapper = styled.div`
-display: grid;
+display: flex;
 `
 const HeaderBg = styled.img`
 position: absolute;
 z-index: -1;
 width: 100vmin;
-@media(min-width: 736px){
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 
-}
 @media screen and (orientation:portrait) { 
     width: 200vmin;
-    left: -50vmin;
-    top: -25vmin;
+
 }
 @media screen and (orientation: landscape){
     width: 100vmax;
-    top: -25vmax;
+
 }
 `
 const LogoDrop = keyframes`
@@ -84,22 +82,17 @@ const LogoDrop = keyframes`
 `
 
 const Logo = styled.div`
-    position: relative;
+    position: absolute;
     margin: auto;
-    width: 50vw;
-    @media screen and (orientation:portrait) { 
-        width: 75vmin;
-        top: -25vmin;
-        
-    }
-    @media screen and (orientation: landscape){
-        width: 75vmax;
-    }
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
     
+`
 
-    `
 const BottomLogo = styled.div`
-    max-width: 100%;
+    width: 50vw;
     margin: auto;
     position: relative;
     top: 0;
@@ -110,7 +103,7 @@ const BottomLogo = styled.div`
 `
 
 const LogoImg = styled.img`
-    max-width: 75vw;
+    width: 50vw;
     margin: auto;
     display: block;
     animation: ${LogoDrop} 1s;

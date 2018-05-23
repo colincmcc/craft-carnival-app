@@ -5,7 +5,7 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/no-danger": "off",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["error", "windows"]
   },
   "settings": {
     "import/core-modules": []

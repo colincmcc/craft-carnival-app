@@ -6,6 +6,10 @@ font-family: 'Eczar', serif;
 font-family: 'Kavoon', cursive;
 font-family: 'Fruktur', cursive;
 }
+@font-face{
+  font-family: 'Freakshow';
+  src: url('../fonts/Carnevalee-Freakshow.ttf');
+}
 body {
     margin: 0;
     padding: 0;

@@ -1,8 +1,8 @@
 const theme = {
     // named colors:
-      brand: '#D86440',
+      brand: '#e44c1c',
       accent: '#F7D49E',
-      background: '#FC9A1C',
+      background: '#ebc046',
       accentDark: '#FC9A1C',
       fontTitle: '#F7D49E',
       lightGrey: '#F6F6F6',

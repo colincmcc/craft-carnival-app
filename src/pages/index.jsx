@@ -10,8 +10,8 @@ import VendorList from '../components/Main/VendorList'
 import Footer from '../components/Footer/Footer'
 import config from "../../data/SiteConfig";
 import bg_gradient from '../assets/images/background_gradient-01.png'
-import sunburst from '../assets/images/cc-sunburst-solo-2.png'
 import hypnotize from '../assets/images/hypnotize.png'
+import fireBreather from '../assets/images/duotone_fire.png'
 
 
 export default class Index extends React.Component {
@@ -30,7 +30,6 @@ export default class Index extends React.Component {
             <Header homeEdge={this.props.data.wordpressWpHomepageItems} />
           </HeaderWrapper>
           {/* grid-area: main */}
-          { /* <ContentBackground /> */}
           <TicketWrapper>
             <Tickets />
           </TicketWrapper>
@@ -73,7 +72,7 @@ const MainGridLayout = styled.div`
     content: "";
     position: absolute;
     width: 100%;
-    height: 250vh;
+    height: 190vh;
     background-image: url(${hypnotize});
     background-repeat: repeat-x repeat-y;
     z-index: 1;
@@ -87,7 +86,7 @@ const NavWrapper = styled.div`
     min-height: 64px;
     max-height: 10vh;
     width: 100%;  
-    background-color: black;
+    background-color: #252525;
     z-index: 1000;
 
 `
@@ -101,24 +100,16 @@ const HeaderWrapper = styled.section`
     z-index: 2;
    
 `
-const ContentBackground = styled.div`
-  grid-row: 3/7;
-  grid-column: 2;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-`
 
 const TicketWrapper = styled.section`
     grid-area: ticket;
     grid-column: 2;
     overflow: hidden;
-    padding-top: 40vh;
-    height: 160vh;
+    height: 100vh;
     width: 100%;
     display: grid;
     z-index: 3;
+    box-shadow: 5px 0 16px #252525;
 `
 const VendorWrapper = styled.div`
   grid-row: 5/6;

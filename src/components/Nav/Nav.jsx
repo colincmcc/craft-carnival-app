@@ -4,6 +4,7 @@ import Scrollspy from 'react-scrollspy'
 
 import ShareButton from '../common/Share_Button'
 import IndustryLogo from '../../assets/images/Header-Logo.png'
+import Lightbulb from '../../assets/images/Lightbulb.svg'
 import Scroll from '../../assets/scripts/Scroll.js'
 
 export default class Nav extends Component{
@@ -65,7 +66,7 @@ const HeaderLogo = styled.div`
     display: block;
     grid-area: logo;
     width: 100%;
-    background: url(${IndustryLogo}) no-repeat left center;
+    background: url(${Lightbulb}) no-repeat left center;
     background-size: contain;
     height: 60px;
     margin-left: 1rem;

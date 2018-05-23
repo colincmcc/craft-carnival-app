@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Waypoint from 'react-waypoint';
 
-import EBWidgets from '../../assets/scripts/eb_widgets.js'
+import EBWidgets from '../../assets/scripts/eb_widgets'
 import hypnotize from '../../assets/images/hypnotize.png'
+import fireBreather from '../../assets/images/duotone_fire.png'
 
 export default class Tickets extends Component{
-
+    
     eventbriteWidget(){
         window.EBWidgets.createWidget({
             // Required
@@ -18,20 +19,20 @@ export default class Tickets extends Component{
             iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
         });
     }
+
     componentDidMount(){
         this.eventbriteWidget();
     }
-    render(){
-        var exampleCallback = function() {
-            console.log('Order complete!');
-        };
-        
+
+    
+
+    render(){     
         
         
         return(
             <TicketContent id="tickets">
-                <SectionTitle>What's New</SectionTitle>
                 <LeftTicket>
+                <SectionTitle>What's New</SectionTitle>
                     <About>
                         <AboutItem>Huge Prizes</AboutItem>
                         <AboutItem>Huge Prizes</AboutItem>
@@ -51,57 +52,46 @@ export default class Tickets extends Component{
 }
 
 const TicketContent = styled.div`
-display: grid;
-grid-template-areas: 
-"title title"
-"left right";
-grid: auto / 1fr 1fr;
+    display: flex;
+    background-image: url(${fireBreather}) no-repeat center center;
+    background-size: cover;
 
 `
 
 const SectionTitle = styled.h2`
-    grid-area: title;
     font-weight: 400;
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: 'Fruktur', cursive;
-    float: left;
     padding: 1em;
     transform: skewY(-11.5deg);
-    text-shadow: 0 0 42px #EBC046;
-    color: white;
-    margin: 0;
-    &.vertical{
-        transform: skewY(0);
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        float: right;
-        position: absolute;
-        right: 20px;
-        padding: 0;
-        margin: 0;
-    }
-    @media(max-width: 763px){
-        font-size: 3em;
+    text-shadow: 0 0 42px #e44c1c;
+    color: #252525;
+    @media(min-width: 763px){
+        font-size: 4rem;
     }
 `
 const LeftTicket = styled.div`
 display: flex;
-grid-area: left;
+flex-direction: column;
 float: left
-padding: 3rem;
 width: 50%;
 `
 const RightTicket = styled.div`
 display: flex;
-grid-area: right;
+flex-direction: column;
 float: right;
 width: 50%;
+
 `
 const EventbritePurchase = styled.div`
-margin: auto;
-z-index: 3;
-height: 450px;
-padding: 1em;
+@media(min-width: 763px){
+    display: flex;
+    margin: auto;
+    z-index: 3;
+    height: 450px;
+    padding: 1em;}
+
+
 `
 const About = styled.ul`
 display: inline-grid;
@@ -112,6 +102,9 @@ padding: 1rem;
 const AboutItem = styled.li`
 display: block;
 float: left;
+font-family: 'Concert One', cursive;
+color: white;
+font-size: 1.25em;
 padding: 1rem;
 
 `
