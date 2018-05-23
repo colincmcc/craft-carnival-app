@@ -12,9 +12,7 @@ export default class VendorList extends Component{
             activeModal: null,
         }
         this.clickHandler = this.clickHandler.bind(this);
-        this.hideModal = this.hideModal.bind(this);
-      
-          
+        this.hideModal = this.hideModal.bind(this); 
     }
     clickHandler(e, index) {
 
@@ -107,9 +105,7 @@ export default class VendorList extends Component{
     }
 }
 const BreweryWrapper = styled.section`
-    overflow: hidden; 
     height: 100%;
-
     @media screen and (min-width: 990px) {
     }
    

@@ -11,25 +11,32 @@ import Footer from '../components/Footer/Footer'
 import config from "../../data/SiteConfig";
 import bg_gradient from '../assets/images/background_gradient-01.png'
 import sunburst from '../assets/images/cc-sunburst-solo-2.png'
+import hypnotize from '../assets/images/hypnotize.png'
+
 
 export default class Index extends React.Component {
+ 
   render() {
     return (
       <div>
         <Helmet title={config.siteTitle} />
         <MainGridLayout>
           {/* grid-area: top */}
-          <Nav />
-
+          <NavWrapper>
+            <Nav />
+          </NavWrapper>
           {/* grid-area: header */}
-          <Header homeEdge={this.props.data.wordpressWpHomepageItems} />
-
+          <HeaderWrapper>
+            <Header homeEdge={this.props.data.wordpressWpHomepageItems} />
+          </HeaderWrapper>
           {/* grid-area: main */}
-          <ContentBackground />
-          <Tickets />
+          { /* <ContentBackground /> */}
+          <TicketWrapper>
+            <Tickets />
+          </TicketWrapper>
 
           <VendorWrapper>
-            <VendorList alt="" slug="breweries" sectionTitle="Breweries" brews={this.props.data.allWordpressWpBreweries.edges} />
+            <VendorList alt="" slug="brews" sectionTitle="Breweries" brews={this.props.data.allWordpressWpBreweries.edges} />
             <VendorList alt="" slug="bands" sectionTitle="Bands" brews={this.props.data.allWordpressWpBreweries.edges} />
           </VendorWrapper>
 
@@ -49,36 +56,75 @@ export default class Index extends React.Component {
 
 const MainGridLayout = styled.div`
   display: grid;
-  grid: auto / 1fr minmax(30vmin, 50vmin) minmax(30vmin, 50vmin) 1fr;
+  grid: auto / 12vmin 1fr 12vmin;
   overflow: hidden;
   gap: 0;
   grid-template-areas: 
-    "top top top top"
-    "header header header header"
-    "header header header header"
-    "main main main main"
-    "main main main main"
-    "main main main main"
-    "footer footer footer footer";
-
-  
-  width: 100vw;
+    "top top top"
+    "header header header"
+    "ticket ticket ticket"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+  width: 100%;
   height: 100%;
   background-image: linear-gradient(180deg, #ebc046, #eb9d37, #e97829, #e44c1c);
+  &:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 250vh;
+    background-image: url(${hypnotize});
+    background-repeat: repeat-x repeat-y;
+    z-index: 1;
+    opacity: .1;
+}
+`
+const NavWrapper = styled.div`
+    grid-area: top;
+    overflow: visible;
+    position: fixed;
+    min-height: 64px;
+    max-height: 10vh;
+    width: 100%;  
+    background-color: black;
+    z-index: 1000;
 
+`
+const HeaderWrapper = styled.section`
+    grid-area: header;
+    display: grid;
+    overflow: visible;
+    height: 90vh;
+    width: 100%;
+    margin: 60px auto 0 auto;
+    z-index: 2;
+   
 `
 const ContentBackground = styled.div`
   grid-row: 3/7;
-  grid-column: 2/4;
+  grid-column: 2;
   background-color: white;
   width: 100%;
   height: 100%;
+  border-radius: 15px;
+`
+
+const TicketWrapper = styled.section`
+    grid-area: ticket;
+    grid-column: 2;
+    overflow: hidden;
+    padding-top: 40vh;
+    height: 160vh;
+    width: 100%;
+    display: grid;
+    z-index: 3;
 `
 const VendorWrapper = styled.div`
+  grid-row: 5/6;
+  grid-column: 2;
   overflow: hidden; 
   height: 100%;
-  grid-area: main;
-  grid-row: 5/6;
   display: grid;
   
   @media screen and (min-width: 990px) {

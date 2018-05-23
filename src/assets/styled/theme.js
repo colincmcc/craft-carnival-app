@@ -6,7 +6,7 @@ const theme = {
       accentDark: '#FC9A1C',
       fontTitle: '#F7D49E',
       lightGrey: '#F6F6F6',
-      darkGrey: '#4E4B47',
+      darkGrey: '#252525',
       ink: '#CCC7A6',
       errorRed: '#FF6666',
       codeEditBlue: '#2973b7',

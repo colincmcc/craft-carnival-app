@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 0;
     min-width: 320px;
+    overflow-x: hidden;
 };
 * {
     font-family: -apple-system, BlinkMacSystemFont,
@@ -40,8 +41,12 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  
+  display: inline-flex;
 };
+ul.narrow{
+  flex-direction: column;
+  width: 100%;
+}
 
 .nav-title{
   font-family: 'Eczar', serif;
@@ -54,6 +59,6 @@ ul {
   align-items:center;
 }
 ul.is-active.a{
-  background-color: #F6921E;
+  color: #AC2705;
   box-shadow: none;
 };

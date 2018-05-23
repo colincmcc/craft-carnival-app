@@ -4,6 +4,7 @@
   "version": "1.1.0",
   "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
+    "animate.css": "^3.6.1",
     "babel-plugin-lodash": "^3.3.2",
     "gatsby": "^1.9.261",
     "gatsby-image": "^1.0.51",
@@ -35,9 +36,13 @@
     "react-disqus-comments": "^1.2.0",
     "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
+    "react-inview-monitor": "^2.2.0",
     "react-responsive-modal": "^3.0.1",
+    "react-scrollspy": "^3.3.5",
     "react-share": "^2.1.1",
     "react-twitter-widgets": "^1.7.1",
+    "react-waypoint": "^8.0.1",
+    "smoothscroll-polyfill": "^0.4.3",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {

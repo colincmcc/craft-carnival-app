@@ -15,7 +15,7 @@ export default class Header extends Component{
         const {homeEdge} = this.props
 
         return(
-            <HeaderWrapper id="header">
+            <LogoWrapper id="header">
                 <HeaderBg src={sunburst} /> 
                 <Logo id="logoWrapper">
 
@@ -24,39 +24,31 @@ export default class Header extends Component{
                         <LogoImg className="alt1"  src={june16} /> <LogoImg className="alt2"  src={twoeight} />
                     </BottomLogo>
                 </Logo>
-            </HeaderWrapper>
+            </LogoWrapper>
 
         )
     }
 }
+
+const LogoWrapper = styled.div`
+display: grid;
+`
 const HeaderBg = styled.img`
 position: absolute;
-width: 200vmin;
-margin: auto;
+z-index: -1;
+width: 100vmin;
 @media(min-width: 736px){
 
 }
 @media screen and (orientation:portrait) { 
-    left: -50%;
-    top: -10%;
+    width: 200vmin;
+    left: -50vmin;
+    top: -25vmin;
 }
 @media screen and (orientation: landscape){
-    width: 110vmax;
+    width: 100vmax;
     top: -25vmax;
-    left: -5vmax;
 }
-`
-
-const HeaderWrapper = styled.section`
-    grid-area: header;
-    display: grid;
-    overflow: visible;
-    position: relative;
-    height: 90vh;
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-   
 `
 const LogoDrop = keyframes`
     from,
@@ -91,23 +83,34 @@ const LogoDrop = keyframes`
     }
 `
 
-const Logo = styled.span`
+const Logo = styled.div`
+    position: relative;
     margin: auto;
-    z-index: 2;
-`
+    width: 50vw;
+    @media screen and (orientation:portrait) { 
+        width: 75vmin;
+        top: -25vmin;
+        
+    }
+    @media screen and (orientation: landscape){
+        width: 75vmax;
+    }
+    
+
+    `
 const BottomLogo = styled.div`
     max-width: 100%;
     margin: auto;
     position: relative;
     top: 0;
-    @media(min-width: 760px){
-        top: -30px;
+    @media(min-width: 763px){
+        top: -50px;
         max-width: 75%
     }
 `
 
 const LogoImg = styled.img`
-    max-width: 50vw;
+    max-width: 75vw;
     margin: auto;
     display: block;
     animation: ${LogoDrop} 1s;
