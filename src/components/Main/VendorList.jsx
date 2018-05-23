@@ -186,7 +186,8 @@ const BreweryContainer = styled.div`
 `
 const BreweryLink = styled.div`
     display: flex;
-    
+    width: 100%;
+    height: 100%;
     
     @media(min-width: 763px){
         font-size: 3em;
