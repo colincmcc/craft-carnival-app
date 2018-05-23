@@ -62,3 +62,6 @@ export default class MainLayout extends React.Component {
   }
 }
 
+MainLayout.propTypes = {
+  children: PropTypes.node,
+}
