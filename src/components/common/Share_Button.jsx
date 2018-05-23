@@ -24,12 +24,13 @@ class ShareButton extends Component{
         const { expanded } = this.state;
         return(
             <ShareToggle> 
+                <ShareLink className={expanded ? 'expanded' : ''} onClick={this.toggleShareMenu} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
+
                 <SocialLinks className={expanded ? 'expanded' : ''}> 
                     <SocialIcon onClick={() => {window.open("https://twitter.com")}} className="fa fa-twitter"/>
                     <SocialIcon onClick={() => {window.open("https://facebook.com")}} className="fa fa-facebook"/>
                     <SocialIcon onClick={() => {window.open("https://instagram.com")}} className="fa fa-instagram"/>
                 </SocialLinks>
-                <ShareLink className={expanded ? 'expanded' : ''} onClick={this.toggleShareMenu} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
                 
             </ShareToggle>
         )
@@ -40,37 +41,20 @@ class ShareButton extends Component{
 export default ShareButton
 const ShareToggle = styled.div`
     position: absolute;
+    display: flex;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
-    flex-direction: column;
+    transform: translateX(calc(-50% - 62px));
+    flex-direction: row;
     margin: auto;
-    padding-top: 2rem;
     font-family: 'Eczar', serif;
     font-size: 1.5em;
     font-weight: 900;
     text-shadow: 0px 2px 0 #C56543;
     cursor: pointer;
+    z-index: 1000;
+    margin: 24px 0;
 
-`
-const GrowLeftAnim = keyframes`
-    from {
-        transform: scaleX(0);
-    }
-    to {
-        transform: scaleX(1);
-`
-const FadeInRightAnim = keyframes`
-
-    from {
-      opacity: 0;
-      transform: translateX(-15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  
 `
 const SocialIcon = styled.i`
 
@@ -87,28 +71,29 @@ const SocialIcon = styled.i`
 
 const SocialLinks = styled.div`
 display: flex;
-flex-direction: column;
-height: 125px;
+flex-direction: row;
+width: 125px;
     vertical-align: baseline;
-    transform: scaleY(0);
+    transform: scaleX(0);
     transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition: 0.5s;
-    transform-origin: top;
+    transform-origin: right;
     text-align: center;
     &.expanded{
-        transform: scaleY(1);
+        transform: scaleX(1);
     }
 
 `
 const ShareLink = styled.div`
-transform: translateY( -125px);
+transform: translateX( 125px);
 transition: 0.5s;
 font-family: 'Eczar', serif;
 font-size: 1.25em;
 font-weight: 900;
 text-shadow: 0px 2px 0 #C56543;
+text-align: center;
 &.expanded{
-    transform: translateY(0);
+    transform: translateX(0);
 }
 &:hover{outline:2px solid #C56543}
 

@@ -36,7 +36,9 @@ export default class Index extends React.Component {
 
           <VendorWrapper>
             <VendorList alt="" slug="brews" sectionTitle="Breweries" brews={this.props.data.allWordpressWpBreweries.edges} />
-            <VendorList alt="" slug="bands" sectionTitle="Bands" brews={this.props.data.allWordpressWpBreweries.edges} />
+            <VendorList alt="one" slug="bands" sectionTitle="Bands" brews={this.props.data.allWordpressWpBreweries.edges} />
+            <VendorList alt="" slug="vendors" sectionTitle="Vendors" brews={this.props.data.allWordpressWpBreweries.edges} />
+
           </VendorWrapper>
 
           {/* grid-area: footer */}
@@ -103,23 +105,23 @@ const HeaderWrapper = styled.section`
 
 const TicketWrapper = styled.section`
     grid-area: ticket;
-    grid-column: 2;
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: grid;
     z-index: 3;
     box-shadow: 5px 0 16px #252525;
+    @media(min-width: 763px){
+      grid-column: 2;
+    }
 `
 const VendorWrapper = styled.div`
-  grid-row: 5/6;
-  grid-column: 2;
+  grid-area: main;
   overflow: hidden; 
   height: 100%;
+  width: 100%;
   display: grid;
   
-  @media screen and (min-width: 990px) {
-  }
 `
 
 

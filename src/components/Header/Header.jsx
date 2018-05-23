@@ -30,6 +30,8 @@ export default class Header extends Component{
 
 const LogoWrapper = styled.div`
 display: flex;
+z-index: 1000;
+position: relative;
 `
 const HeaderBg = styled.img`
 position: absolute;

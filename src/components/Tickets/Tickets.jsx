@@ -8,6 +8,10 @@ import fireBreather from '../../assets/images/duotone_fire.png'
 
 export default class Tickets extends Component{
     
+
+    componentDidMount(){
+        this.eventbriteWidget();
+    }
     eventbriteWidget(){
         window.EBWidgets.createWidget({
             // Required
@@ -19,11 +23,6 @@ export default class Tickets extends Component{
             iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
         });
     }
-
-    componentDidMount(){
-        this.eventbriteWidget();
-    }
-
     
 
     render(){     
@@ -34,11 +33,12 @@ export default class Tickets extends Component{
                 <LeftTicket>
                 <SectionTitle>What's New</SectionTitle>
                     <About>
-                        <AboutItem>Huge Prizes</AboutItem>
-                        <AboutItem>Huge Prizes</AboutItem>
-                        <AboutItem>Huge Prizes</AboutItem>
-                        <AboutItem>Huge Prizes</AboutItem>
-                        <AboutItem>Huge Prizes</AboutItem>
+                        <AboutItem>SIDESHOW ACTS</AboutItem>
+                        <AboutItem>HUGE GRANDE PRIZES</AboutItem>
+                        <AboutItem>FOOD TRUCKS</AboutItem>
+                        <AboutItem>BLACKSMITHING</AboutItem>
+                        <AboutItem>ART VENDORS</AboutItem>
+                        <AboutItem>LIVE MUSIC</AboutItem>
                     </About>
                 </LeftTicket>
                 <RightTicket>
@@ -53,18 +53,23 @@ export default class Tickets extends Component{
 
 const TicketContent = styled.div`
     display: flex;
-    background-image: url(${fireBreather}) no-repeat center center;
+    background-image: url(${fireBreather});
     background-size: cover;
+    flex-direction: column;
+    padding: 2rem;
+    @media(min-width: 763px){
+        flex-direction: row;
 
+    }
 `
 
 const SectionTitle = styled.h2`
     font-weight: 400;
     font-size: 3rem;
     font-family: 'Fruktur', cursive;
-    padding: 1em;
+    padding: 0 1rem;
     transform: skewY(-11.5deg);
-    text-shadow: 0 0 42px #e44c1c;
+    text-shadow: 0 0 42px #FBD45D;
     color: #252525;
     @media(min-width: 763px){
         font-size: 4rem;
@@ -73,38 +78,57 @@ const SectionTitle = styled.h2`
 const LeftTicket = styled.div`
 display: flex;
 flex-direction: column;
-float: left
-width: 50%;
+width: 100%;
+text-align: center;
+@media(min-width: 763px){
+    width: 50%;
+    float: left;
+
+    }
 `
 const RightTicket = styled.div`
 display: flex;
 flex-direction: column;
-float: right;
+width: 100%;
+@media(min-width: 763px){
 width: 50%;
+float: right;
+}
 
 `
 const EventbritePurchase = styled.div`
-@media(min-width: 763px){
     display: flex;
     margin: auto;
     z-index: 3;
     height: 450px;
-    padding: 1em;}
+
+@media(min-width: 763px){
+    padding: 2em 0 0 0 ;
+}
 
 
 `
 const About = styled.ul`
-display: inline-grid;
-float: left;
-padding: 1rem;
-`
+    display: inline-grid;
+    float: left;
+    padding: 1rem;
+    text-align: center;
+    margin: auto;
+    @media(min-width: 763px){
 
+        text-align: justify;
+    }
+`
 const AboutItem = styled.li`
-display: block;
-float: left;
-font-family: 'Concert One', cursive;
-color: white;
-font-size: 1.25em;
-padding: 1rem;
+    display: block;
+    float: left;
+    font-family: 'Concert One', cursive;
+    color: white;
+    font-size: 1.5em;
+    padding: .5rem;
+    @media(min-width: 763px){
+
+        font-size: 2em;
+    }
 
 `

@@ -62,13 +62,13 @@ export default class VendorList extends Component{
         const {alt} =this.props
         
         return(
-           <BreweryWrapper id={slug} >
+           <BreweryWrapper className={alt} id={slug} >
                 <header>
                 <SectionTitle className={alt}>{sectionTitle}</SectionTitle>
                 </header> 
                 <BreweryGrid  className={alt}>
                     {breweryItems.map((brewItem, index)=> (
-                        <div>
+                        <BreweryContainer>
                         
                         <Modal classNames={{
                                 closeButton: 'custom-closeButton',
@@ -92,10 +92,10 @@ export default class VendorList extends Component{
                                 </ModalWrapper>
                             
                             </Modal>
-                            <BreweryContainer id={brewItem.id} onClick={e => this.clickHandler(e, index)}>
-                                        <BreweryImg src={brewItem.imgUrl} />  
-                            </BreweryContainer>
-                        </div>
+                            <BreweryLink  id={brewItem.id} onClick={e => this.clickHandler(e, index)}>
+                                        <BreweryImg className={alt} src={brewItem.imgUrl} />  
+                            </BreweryLink>
+                        </BreweryContainer>
                     ))}
                     
         
@@ -106,7 +106,21 @@ export default class VendorList extends Component{
 }
 const BreweryWrapper = styled.section`
     height: 100%;
-    @media screen and (min-width: 990px) {
+    display: flex;
+    flex-direction: column;
+    &.one{
+        float: left;
+        background-color: #196591;
+        height: 100vh;
+        @media screen and (min-width: 763px) {
+            width: 90%;
+            height: 80vh;
+
+         }
+    }
+    @media screen and (min-width: 763px) {
+        padding: 0 10vmin;
+
     }
    
 `
@@ -114,15 +128,15 @@ const BreweryWrapper = styled.section`
 const BreweryGrid = styled.div`
     display: grid;
     justify-content: space-evenly;
-    padding: 0 2em 0 4em;
-    align-items: center;
-    justify-items: center;
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    padding: 1em 2em;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 5px;
     height: 100%;
     width: 100%;  
-
+    &.one{
+        grid-auto-rows: minmax(10vh, auto);
+        grid-template-columns: repeat(auto-fit, 1fr);
+    }
     &.vertical{
         margin-top: 2rem;
     }
@@ -134,9 +148,14 @@ const SectionTitle = styled.h2`
     float: left;
     padding-top: 1em;
     padding-left: 1em;
-    text-shadow: 0 0 42px #3d7b89;
+    text-shadow: 0 0 42px #FFC176;
     transform: skewY(-11.5deg);
-    color: #ccc786;
+    color: #252525;
+    &.one{
+        text-shadow: 0 0 42px #568EB0;
+
+
+    }
     &.vertical{
         transform: skewY(0);
         writing-mode: vertical-rl;
@@ -155,23 +174,24 @@ const SectionTitle = styled.h2`
 const SocialIcon = styled.span`
     padding: 10px;
     
-    &:hover{outline:2px solid #f0f0f0}
+    &:hover{color: #C56543}
 `
 
 const BreweryContainer = styled.div`
-    display: block;
+    display: flex;
     width: 100%;
     height: 100%;
-    border-radius: .5em;
-    padding: .5em;
+    border-radius: 15px;
+    &:hover{outline:2px solid #C56543}
+`
+const BreweryLink = styled.div`
+    display: flex;
     
-    &:hover{outline:2px solid #f0f0f0}
     
     @media(min-width: 763px){
         font-size: 3em;
     }
 `
-
 
 const BreweryImg = styled.img`
     display: block;
@@ -193,6 +213,7 @@ const ModalWrapper = styled.div`
     "bd"
     "ft";
     color: black;
+    z-index: 999;
     @media (min-width: 600px) {
         clear: both;
         &:after{
