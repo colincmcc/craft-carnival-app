@@ -2,28 +2,13 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Waypoint from 'react-waypoint';
 
-import EBWidgets from '../../assets/scripts/eb_widgets'
 import hypnotize from '../../assets/images/hypnotize.png'
 import fireBreather from '../../assets/images/duotone_fire.png'
 
 export default class Tickets extends Component{
     
 
-    componentDidMount(){
-        this.eventbriteWidget();
-    }
-    eventbriteWidget(){
-        window.EBWidgets.createWidget({
-            // Required
-            widgetType: 'checkout',
-            eventId: '44955026695',
-            iframeContainerId: 'eventbrite-widget-container-44955026695',
-    
-            // Optional
-            iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
-        });
-    }
-    
+ 
 
     render(){     
         
@@ -43,7 +28,7 @@ export default class Tickets extends Component{
                 </LeftTicket>
                 <RightTicket>
                     <EventbritePurchase>
-                        <div id="eventbrite-widget-container-44955026695" ></div>
+                    <iframe src="https://www.eventbrite.com/checkout-external?eid=44955026695&amp;parent=http%3A%2F%2Flocalhost%3A8000%2F" sandbox="allow-modals allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox" data-automation="checkout-widget-iframe-44955026695" allowtransparency="true" scrolling="auto" width="100%" height="100%" frameborder="0"></iframe>
                     </EventbritePurchase>
                 </RightTicket>
             </TicketContent>
