@@ -1,14 +1,14 @@
-import React from "react";
-import Helmet from "react-helmet";
+import React from "react"
+import Helmet from "react-helmet"
 import styled from 'styled-components'
 
 import Nav from '../components/Nav/Nav'
 import Header from '../components/Header/Header'
 import Tickets from '../components/Tickets/Tickets'
 import VendorList from '../components/Main/VendorList'
-
+import BandList from '../components/Main/Bands'
 import Footer from '../components/Footer/Footer'
-import config from "../../data/SiteConfig";
+import config from "../../data/SiteConfig"
 import hypnotize from '../assets/images/hypnotize.png'
 
 export default class Index extends React.Component {
@@ -27,20 +27,22 @@ export default class Index extends React.Component {
             <Header homeEdge={this.props.data.wordpressWpHomepageItems} />
           </HeaderWrapper>
           {/* grid-area: main */}
-          <TicketWrapper>
+          <div id="tickets" />
+          <TicketWrapper id="tickets">
             <Tickets />
           </TicketWrapper>
 
           <VendorWrapper>
             <VendorList alt="" slug="brews" sectionTitle="Breweries" brews={this.props.data.allWordpressWpBreweries.edges} />
-            <VendorList alt="one" slug="bands" sectionTitle="Bands" brews={this.props.data.allWordpressWpBreweries.edges} />
-            <VendorList alt="" slug="vendors" sectionTitle="Vendors" brews={this.props.data.allWordpressWpBreweries.edges} />
+            <BandList alt="one" slug="bands" sectionTitle="Sideshows" brews={this.props.data.allWordpressAcfBands.edges} />
+            <VendorList alt="" slug="vendors" sectionTitle="Vendors" brews={this.props.data.allWordpressWpRetails.edges} />
 
           </VendorWrapper>
 
           {/* grid-area: footer */}
-          <Footer />
-
+          <FooterWrapper>
+            <Footer />
+          </FooterWrapper>
         </MainGridLayout>
 
       </div>
@@ -71,7 +73,7 @@ const MainGridLayout = styled.div`
     content: "";
     position: absolute;
     width: 100%;
-    height: 190vh;
+    height: 125vh;
     background-image: url(${hypnotize});
     background-repeat: repeat-x repeat-y;
     z-index: 1;
@@ -93,7 +95,7 @@ const HeaderWrapper = styled.section`
     grid-area: header;
     display: grid;
     overflow: visible;
-    height: 90vh;
+    height: 80vh;
     width: 100%;
     margin: 60px auto 0 auto;
     z-index: 2;
@@ -103,6 +105,7 @@ const HeaderWrapper = styled.section`
 const TicketWrapper = styled.section`
     grid-area: ticket;
     overflow: hidden;
+    min-height: 90vh;
     height: 100%;
     width: 100%;
     display: grid;
@@ -115,10 +118,16 @@ const TicketWrapper = styled.section`
 const VendorWrapper = styled.div`
   grid-area: main;
   overflow: hidden; 
+  min-height: 90vh;
   height: 100%;
   width: 100%;
   display: grid;
   
+`
+const FooterWrapper = styled.div`
+grid-area: footer;
+overflow: hidden;
+height: 100vh;
 `
 
 
@@ -177,21 +186,17 @@ export const pageQuery = graphql`
     edges{
       node{
         acf{
-          band_name
-          band_image {
-            wordpress_id
-            alt
-            title
-            caption
+          name
+          logo {
+            source_url
+            id
             description
-            mime_type
-            url
-            width
-            height
           }
+          website_url
           facebook_url
           twitter_url
-          website_url
+          pinterest_url
+          instagram_url
         }
       }
     }

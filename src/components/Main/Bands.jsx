@@ -5,7 +5,7 @@ import Modal from 'react-responsive-modal';
 import funkyLines from '../../assets/images/funky-lines_transparent.png'
 
 
-export default class VendorList extends Component{
+export default class BandList extends Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -34,8 +34,8 @@ export default class VendorList extends Component{
             webUrl: brew.node.acf.website_url,
             fbUrl: brew.node.acf.facebook_url,
             twitterUrl: brew.node.acf.twitter_url,
-            imgUrl: brew.node.acf.logo.url,
-            id: brew.node.acf.logo.wordpress_id
+            imgUrl: brew.node.acf.logo.source_url,
+            id: brew.node.acf.logo.id
           })
         })
         return brewList
@@ -61,13 +61,13 @@ export default class VendorList extends Component{
         const {alt} =this.props
         
         return(
-          <BreweryWrapper className={alt} id={slug} >
+          <BandWrapper className={alt} id={slug} >
             <header>
               <SectionTitle className={alt}>{sectionTitle}</SectionTitle>
             </header> 
-            <BreweryGrid  className={alt}>
+            <BandGrid  className={alt}>
               {breweryItems.map((brewItem, index)=> (
-                <BreweryContainer>
+                <BandContainer>
                     
                   <Modal classNames={{
                       closeButton: 'custom-closeButton',
@@ -91,85 +91,86 @@ export default class VendorList extends Component{
                     </ModalWrapper>
                         
                   </Modal>
-                  <BreweryLink  id={brewItem.id} onClick={e => this.clickHandler(e, index)}>
-                    <BreweryImg className={alt} src={brewItem.imgUrl} />  
-                  </BreweryLink>
-                </BreweryContainer>
+                  <BandLink  id={brewItem.id} onClick={e => this.clickHandler(e, index)}>
+                    <BandTitle> {brewItem.name} </BandTitle>
+                    <BandImg className={alt} src={brewItem.imgUrl} />  
+                  </BandLink>
+                </BandContainer>
                 ))}
                 
       
-            </BreweryGrid>
-          </BreweryWrapper>
+            </BandGrid>
+          </BandWrapper>
         )
     }
 }
 
-// TODO BreweryWrapper is a nested mess of CSS.  Tidy up.
+// TODO BandWrapper is a nested mess of CSS.  Tidy up.
 
-const BreweryWrapper = styled.section`
-    height: 100%;
+const BandWrapper = styled.section`
     display: flex;
     flex-direction: column;
     z-index: 4;
-    &.one{
-        float: left;
-        background-color: #196591;
-        height: 100vh;
-        @media screen and (min-width: 763px) {
-            width: 90%;
-            height: 80vh;
+    text-align: center;
+    float: left;
+    background-color: #196591;
+    height: 100%;
+    margin: 1em 0;
 
-         }
-         &:after{
-          content: "";
-          background-image: url(${funkyLines});
-          background-repeat: repeat-x repeat-y;
-          opacity: .1;
-          position: absolute;
-           width: 100%;
-           height: 100%;
-           z-index: -1;
-           left: 0;
+    
+    @media screen and (min-width: 763px) {
+        width: 90%;
+        height: 80vh;
+        &:after{
+            content: "";
+            background-image: url(${funkyLines});
+            opacity: .1;
+            position: absolute;
+            width: 100%;
+            height: 300%;
+            z-index: -1;
+            left: 0;
+            overflow: hidden;
             @media screen and (min-width: 763px) {
-              width: 90%;
-              height: 80vh;
-
-          }
-        }
+                width: 90%;
+                height: 80vh;
+    
+            }
     }
+    
     @media screen and (min-width: 763px) {
         padding: 0 10vmin 4rem 10vmin;
         padding-bottom: 3rem;
 
     }
+
+   
    
 `
 
-const BreweryGrid = styled.div`
+const BandGrid = styled.div`
     display: grid;
     justify-content: space-evenly;
-    padding: 1em 2em;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    align-items:center;
     grid-gap: 5px;
     height: 100%;
     width: 100%;  
+    grid-template-columns: repeat(auto-fit, 1fr);
     &.one{
-        grid-auto-rows: minmax(10vh, auto);
-        grid-template-columns: repeat(auto-fit, 1fr);
+
     }
     &.vertical{
         margin-top: 2rem;
+    }
+    @media(min-width: 763px){
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 `
 const SectionTitle = styled.h2`
     font-weight: 400;
     font-size: 3rem;
     font-family: 'Fruktur', cursive;
-    float: left;
-    padding-top: 1em;
-    padding-left: 1em;
     text-shadow: 0 0 42px #FFC176;
-    transform: skewY(-11.5deg);
     color: #252525;
     &.one{
         text-shadow: 0 0 42px #568EB0;
@@ -187,12 +188,12 @@ const SectionTitle = styled.h2`
         margin: 0;
     }
     @media(min-width: 763px){
-      font-size: 4em;
-  }
-  @media screen and (min-width: 1280px) {
-      font-size: 6rem;
+        font-size: 4em;
+    }
+    @media screen and (min-width: 1280px) {
+        font-size: 6rem;
 
-  }
+    }
 `
 
 const SocialIcon = styled.span`
@@ -201,27 +202,43 @@ const SocialIcon = styled.span`
     &:hover{color: #C56543}
 `
 
-const BreweryContainer = styled.div`
+const BandContainer = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
     border-radius: 15px;
+
     &:hover{outline:2px solid #C56543}
+   
 `
-const BreweryLink = styled.div`
+
+const BandLink = styled.div`
     display: flex;
     width: 100%;
     height: 100%;
-    
+    flex-direction: column;
+    margin-bottom: 2em;
     @media(min-width: 763px){
         font-size: 3em;
     }
 `
+const BandTitle = styled.div`
+font-weight: 400;
+font-size: 2rem;
+font-family: 'Fruktur', cursive;
+padding-top: 1em;
+text-shadow: 0 0 42px #FFC176;
+color: white;
+font-family: 'Concert One', cursive;
 
-const BreweryImg = styled.img`
+`
+
+const BandImg = styled.img`
     display: block;
     max-width: 100%;
     margin: auto;
+    height: 30vh;
+
     &:hover{opacity:.8}
 
 `

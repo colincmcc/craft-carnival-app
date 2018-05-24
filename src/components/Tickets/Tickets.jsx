@@ -12,24 +12,24 @@ export default class Tickets extends Component{
         
         
         return(
-            <TicketContent id="tickets">
-                <LeftTicket>
-                <SectionTitle>What's New</SectionTitle>
-                    <About>
-                        <AboutItem>SIDESHOW ACTS</AboutItem>
-                        <AboutItem>HUGE GRANDE PRIZES</AboutItem>
-                        <AboutItem>FOOD TRUCKS</AboutItem>
-                        <AboutItem>BLACKSMITHING</AboutItem>
-                        <AboutItem>ART VENDORS</AboutItem>
-                        <AboutItem>LIVE MUSIC</AboutItem>
-                    </About>
-                </LeftTicket>
-                <RightTicket>
-                    <EventbritePurchase>
-                    <iframe src="https://www.eventbrite.com/checkout-external?eid=44955026695&amp;parent=http%3A%2F%2Flocalhost%3A8000%2F" sandbox="allow-modals allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox" data-automation="checkout-widget-iframe-44955026695" allowtransparency="true" scrolling="auto" width="100%" height="100%" frameborder="0"></iframe>
-                    </EventbritePurchase>
-                </RightTicket>
-            </TicketContent>
+          <TicketContent >
+            <LeftTicket>
+              <SectionTitle>What's New</SectionTitle>
+              <About>
+                <AboutItem>SIDESHOW ACTS</AboutItem>
+                <AboutItem>HUGE GRANDE PRIZES</AboutItem>
+                <AboutItem>FOOD TRUCKS</AboutItem>
+                <AboutItem>BLACKSMITHING</AboutItem>
+                <AboutItem>ART VENDORS</AboutItem>
+                <AboutItem>LIVE MUSIC</AboutItem>
+              </About>
+            </LeftTicket>
+            <RightTicket>
+              <EventbritePurchase>
+                <iframe title="eventbritePurchase" src="https://www.eventbrite.com/checkout-external?eid=44955026695&amp;parent=http%3A%2F%2Fcraftcarnivalpgh.com%3A8000%2F" sandbox="allow-modals allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox" data-automation="checkout-widget-iframe-44955026695" allowtransparency="true" scrolling="auto" width="100%" height="100%" frameborder="0" />
+              </EventbritePurchase>
+            </RightTicket>
+          </TicketContent>
         )
     }
 }
@@ -44,6 +44,7 @@ const TicketContent = styled.div`
         flex-direction: row;
 
     }
+    
 `
 
 const SectionTitle = styled.h2`
@@ -54,8 +55,16 @@ const SectionTitle = styled.h2`
     transform: skewY(-11.5deg);
     text-shadow: 0 0 42px #FBD45D;
     color: #252525;
+    &.altTitle{
+        transform: skewY(0);
+
+    }
     @media(min-width: 763px){
         font-size: 4rem;
+    }
+    
+@media(min-width: 1280px){
+        font-size: 6rem;
     }
 `
 const LeftTicket = styled.div`
@@ -63,6 +72,7 @@ display: flex;
 flex-direction: column;
 width: 100%;
 text-align: center;
+
 @media(min-width: 763px){
     width: 50%;
     float: left;
@@ -73,11 +83,12 @@ const RightTicket = styled.div`
 display: flex;
 flex-direction: column;
 width: 100%;
+text-align: center;
+
 @media(min-width: 763px){
 width: 50%;
 float: right;
 }
-
 `
 const EventbritePurchase = styled.div`
     display: flex;
@@ -89,7 +100,10 @@ const EventbritePurchase = styled.div`
     padding: 2em 0 0 0 ;
 }
 
-
+@media(min-width: 1280px){
+    width: 450px;
+    height: 600px;
+}
 `
 const About = styled.ul`
     display: inline-grid;
@@ -99,7 +113,7 @@ const About = styled.ul`
     margin: auto;
     @media(min-width: 763px){
 
-        text-align: justify;
+        text-align: left;
     }
 `
 const AboutItem = styled.li`
@@ -112,6 +126,9 @@ const AboutItem = styled.li`
     @media(min-width: 763px){
 
         font-size: 2em;
+    }
+    @media(min-width: 1280px){
+        font-size: 4em;
     }
 
 `

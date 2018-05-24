@@ -23,7 +23,7 @@ export default class ShareButton extends Component{
         const { expanded } = this.state;
         return(
             <ShareToggle> 
-                <ShareLink className={expanded ? 'expanded' : ''} onClick={() => this.toggleShareMenu} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
+                <ShareLink className={expanded ? 'expanded' : ''} onClick={() => this.toggleShareMenu()} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
 
                 <SocialLinks className={expanded ? 'expanded' : ''}> 
                     <SocialIcon onClick={() => {window.open("https://twitter.com")}} className="fa fa-twitter"/>

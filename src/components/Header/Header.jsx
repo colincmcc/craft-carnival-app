@@ -94,21 +94,26 @@ const Logo = styled.div`
 `
 
 const BottomLogo = styled.div`
-    width: 50vw;
+    width: 75%;
     margin: auto;
     position: relative;
     top: 0;
     @media(min-width: 763px){
-        top: -50px;
+        top: -30px;
         max-width: 75%
+        width: 50vw;
     }
 `
 
 const LogoImg = styled.img`
-    width: 50vw;
+    width: 75%;
     margin: auto;
     display: block;
     animation: ${LogoDrop} 1s;
+    @media(min-width: 763px){
+       
+        width: 50vw;
+    }
     &.alt1{
         animation: ${LogoDrop} 1s .5s;
         opacity:0;
