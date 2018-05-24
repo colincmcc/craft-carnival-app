@@ -50,7 +50,7 @@ const TicketContent = styled.div`
 const SectionTitle = styled.h2`
     font-weight: 400;
     font-size: 3rem;
-    font-family: 'Fruktur', cursive;
+    font-family: 'Freakshow';
     padding: 0 1rem;
     transform: skewY(-11.5deg);
     text-shadow: 0 0 42px #FBD45D;

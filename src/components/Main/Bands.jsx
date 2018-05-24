@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Modal from 'react-responsive-modal';
 
 import funkyLines from '../../assets/images/funky-lines_transparent.png'
-
+import duotoneConcert from '../../assets/images/duotone_concert.png'
 
 export default class BandList extends Component{
     constructor(props) {
@@ -113,29 +113,16 @@ const BandWrapper = styled.section`
     z-index: 4;
     text-align: center;
     float: left;
-    background-color: #196591;
+    background-image: url(${duotoneConcert});
     height: 100%;
     margin: 1em 0;
+    box-shadow: 5px 0 16px #252525;
 
     
     @media screen and (min-width: 763px) {
         width: 90%;
         height: 80vh;
-        &:after{
-            content: "";
-            background-image: url(${funkyLines});
-            opacity: .1;
-            position: absolute;
-            width: 100%;
-            height: 300%;
-            z-index: -1;
-            left: 0;
-            overflow: hidden;
-            @media screen and (min-width: 763px) {
-                width: 90%;
-                height: 80vh;
-    
-            }
+        
     }
     
     @media screen and (min-width: 763px) {
@@ -153,8 +140,6 @@ const BandGrid = styled.div`
     justify-content: space-evenly;
     align-items:center;
     grid-gap: 5px;
-    height: 100%;
-    width: 100%;  
     grid-template-columns: repeat(auto-fit, 1fr);
    
     @media(min-width: 763px){
@@ -191,6 +176,7 @@ const BandContainer = styled.div`
     flex-direction: column;
     width: 100%;
     border-radius: 15px;
+    padding: .5rem;
     &:hover{outline:2px solid #C56543}
    
 `
@@ -200,7 +186,7 @@ const BandLink = styled.div`
     width: 100%;
     height: 100%;
     flex-direction: column;
-    margin-bottom: 3em;
+    margin: auto;
     @media(min-width: 763px){
         font-size: 3em;
     }
@@ -208,8 +194,8 @@ const BandLink = styled.div`
 const BandTitle = styled.div`
 font-weight: 400;
 font-size: 2rem;
-font-family: 'Fruktur', cursive;
-padding-top: 1em;
+padding-bottom: .5rem;
+font-family: 'Freakshow';
 text-shadow: 0 0 42px #FFC176;
 color: white;
 font-family: 'Concert One', cursive;

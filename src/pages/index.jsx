@@ -73,7 +73,7 @@ const MainGridLayout = styled.div`
     content: "";
     position: absolute;
     width: 100%;
-    height: 125vh;
+    height: 100%;
     background-image: url(${hypnotize});
     background-repeat: repeat-x repeat-y;
     z-index: 1;
@@ -95,7 +95,7 @@ const HeaderWrapper = styled.section`
     grid-area: header;
     display: grid;
     overflow: visible;
-    height: 80vh;
+    height: 85vh;
     width: 100%;
     margin: 60px auto 0 auto;
     z-index: 2;

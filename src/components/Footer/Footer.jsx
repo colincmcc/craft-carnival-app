@@ -54,11 +54,10 @@ const SectionTitle = styled.div`
 font-weight: 400;
 display: flex;
 font-size: 3rem;
-font-family: 'Fruktur', cursive;
+font-family: 'Freakshow';
 padding: 1em 0;
 text-shadow: 0 0 42px #FFC176;
 color: white;
-font-family: 'Concert One', cursive;
 text-align: center;
 `
 
@@ -79,18 +78,21 @@ margin: auto;
 const ContactInfo = styled.ul`
 display: flex;
 flex-direction: column;
+margin: auto 0;
 width: 100%;
 text-align: left;
 color: #568FB0;
 font-size: 1.25em;
-
+font-family: 'Concert One', cursive;
+line-height: 2em;
 @media(min-width: 763px){
     width: 50%;
     float: left;
-
+    font-size: 2em;
     }
 
 `
+
 
 const FooterRight = styled.div`
 display: flex;
@@ -105,7 +107,7 @@ margin: auto;
 @media(min-width: 763px){
     width: 50%;
     float: left;
-    min-height: 1000px;
+    min-height: 1200px;
 
     }
 
@@ -113,8 +115,7 @@ margin: auto;
 const GoogleMap = styled.div`
 display: flex;
 width: 100%;
-padding: .5em;
-height: 450px;
+height: 100%;
 
 `
 
@@ -123,4 +124,8 @@ color: #568FB0;
 font-size: 1.25em;
 text-align: left;
 padding: 1em 0;
+@media(min-width: 763px){
+  
+  font-size: 2em;
+  }
 `

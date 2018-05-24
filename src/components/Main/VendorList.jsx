@@ -148,18 +148,19 @@ const BreweryWrapper = styled.section`
 const BreweryGrid = styled.div`
     display: grid;
     justify-content: space-evenly;
+    justify-items: center;
     padding: 2em 2em;
-    grid: auto / repeat(auto-fit, minmax(100px, 1fr));
+    grid: minmax(150px, auto) / repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 5px;
     width: 100%;  
     @media(min-width: 763px){
-        grid: auto / repeat(4, minmax(100px, 1fr));
+        grid: auto / repeat(4, minmax(150px, 1fr));
     
 `
 const SectionTitle = styled.h2`
     font-weight: 400;
     font-size: 3rem;
-    font-family: 'Fruktur', cursive;
+    font-family: 'Freakshow';
     float: left;
     padding-left: 1em;
     padding-bottom: 1em;
@@ -202,8 +203,6 @@ const BreweryContainer = styled.div`
 const BreweryLink = styled.div`
     display: flex;
     width: 100%;
-    height: 100px;
-
     @media(min-width: 763px){
         font-size: 3em;
         height: 100%;

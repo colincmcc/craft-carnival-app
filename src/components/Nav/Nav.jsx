@@ -35,9 +35,9 @@ export default class Nav extends Component{
                             <NavListItem><Scroll type="id" element="bands"><NavLink>BANDS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="vendors"><NavLink>VENDORS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
-                            <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
                         </Scrollspy>
                     </NavBarWide>
+                    <NarrowTitle> Craft Carnival 2018 </NarrowTitle>
                     <NavButton className={isActive ? "isActive fa fa-bars fa-2x" : "fa fa-bars fa-2x"} onClick={() => this.burgerToggle()}/>
                     <NavBarNarrow>
                         <NavMenuNarrow id="navNarrow" className={isActive ? "isActive" : ""}>
@@ -155,6 +155,19 @@ padding: 3rem 0;
     display: block;
     transform: scale(1,1);
     opacity: 1;
+}
+`
+const NarrowTitle = styled.div`
+font-family: 'Freakshow';
+grid-area: nav;
+text-align: center;
+display flex;
+font-size: 1.75em;
+color: #e44c1c;
+margin: auto;
+
+@media(min-width: 763px){
+    display: none;
 }
 `
 const SkewedBlock = styled.div`
