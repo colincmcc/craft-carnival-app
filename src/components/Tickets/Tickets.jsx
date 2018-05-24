@@ -12,7 +12,7 @@ export default class Tickets extends Component{
         
         
         return(
-          <TicketContent >
+          <TicketContent id="tickets">
             <LeftTicket>
               <SectionTitle>What's New</SectionTitle>
               <About>
