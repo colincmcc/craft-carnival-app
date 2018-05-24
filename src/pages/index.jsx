@@ -24,10 +24,11 @@ export default class Index extends React.Component {
           </NavWrapper>
           {/* grid-area: header */}
           <HeaderWrapper>
-            <Header  />
+            <Header homeEdge={this.props.data.wordpressWpHomepageItems} />
           </HeaderWrapper>
           {/* grid-area: main */}
-          <TicketWrapper >
+          <div id="tickets" />
+          <TicketWrapper id="tickets">
             <Tickets />
           </TicketWrapper>
 
@@ -142,32 +143,6 @@ height: 100%;
   /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    wordpressWpHomepageItems(slug: {eq:"home"}){
-    id
-    slug
-		acf{
-      bgimg {
-        wordpress_id
-        title
-        caption
-        mime_type
-        source_url
-      }
-      header_logo {
-        wordpress_id
-        alt
-        title
-        caption
-        description
-        mime_type
-        url
-        width
-        height
-      }
-      trailing_image
-      header_text
-    }
-  }
     allWordpressAcfRetails{
      edges{
       node{

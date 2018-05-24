@@ -35,6 +35,7 @@ export default class Nav extends Component{
                             <NavListItem><Scroll type="id" element="bands"><NavLink>BANDS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="vendors"><NavLink>VENDORS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
+                            <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
                         </Scrollspy>
                     </NavBarWide>
                     <NavButton className={isActive ? "isActive fa fa-bars fa-2x" : "fa fa-bars fa-2x"} onClick={() => this.burgerToggle()}/>

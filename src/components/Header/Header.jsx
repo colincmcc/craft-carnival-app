@@ -10,6 +10,7 @@ export default class Header extends Component{
 
     render(){
         
+        const {homeEdge} = this.props
 
         return(
           <LogoWrapper id="header">

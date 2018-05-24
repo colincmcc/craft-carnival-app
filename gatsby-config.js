@@ -51,8 +51,8 @@ module.exports = {
         // Set to true to debug endpoints on 'gatsby build'
         verboseOutput: false,
         searchAndReplaceContentUrls: {
-          sourceUrl: "http://dev.craftcarnivalpgh.com",
-          replacementUrl: "https://dev.craftcarnivalpgh.com",
+          sourceUrl: "http://craftcarnivalpgh.com",
+          replacementUrl: "https://craftcarnivalpgh.com",
         },
       }
     },
