@@ -9,10 +9,7 @@ import VendorList from '../components/Main/VendorList'
 
 import Footer from '../components/Footer/Footer'
 import config from "../../data/SiteConfig";
-import bg_gradient from '../assets/images/background_gradient-01.png'
 import hypnotize from '../assets/images/hypnotize.png'
-import fireBreather from '../assets/images/duotone_fire.png'
-
 
 export default class Index extends React.Component {
  
@@ -125,7 +122,7 @@ const VendorWrapper = styled.div`
 `
 
 
-  /* eslint no-undef: "off"*/
+  /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
     allWordpressPage(sort:{fields:[menu_order]}){

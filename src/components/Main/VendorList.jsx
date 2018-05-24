@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
 import styled from 'styled-components'
 import Modal from 'react-responsive-modal';
-import grain from '../../assets/images/paper_1.png'
 
 export default class VendorList extends Component{
     constructor(props) {

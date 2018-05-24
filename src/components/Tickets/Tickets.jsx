@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Waypoint from 'react-waypoint';
 
-import hypnotize from '../../assets/images/hypnotize.png'
 import fireBreather from '../../assets/images/duotone_fire.png'
 
 export default class Tickets extends Component{

@@ -1,12 +1,10 @@
 import React from "react"
 import Helmet from "react-helmet"
-import styled, {ThemeProvider} from 'styled-components'
 
 
 import '../assets/css/custom-modal.css'
 import '../assets/css/defaults.css'
 import '../assets/css/font-awesome.min.css'
-import theme from '../assets/styled/theme'
 import config from "../../data/SiteConfig"
 
 export default class MainLayout extends React.Component {
@@ -54,14 +52,8 @@ export default class MainLayout extends React.Component {
           <title>{`${config.siteTitle} |  ${this.getLocalTitle()}`}</title>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <ThemeProvider theme={theme}> 
-            {children()} 
-        </ThemeProvider>
+        {children()} 
       </div>
     );
   }
-}
-
-MainLayout.propTypes = {
-  children: PropTypes.node,
 }

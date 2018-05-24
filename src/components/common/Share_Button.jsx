@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import styled, {keyframes} from 'styled-components'
+import styled from 'styled-components'
 
 
-class ShareButton extends Component{
+export default class ShareButton extends Component{
     constructor(props) {
         super(props);
         this.state = { expanded: false }
@@ -11,7 +10,7 @@ class ShareButton extends Component{
 
     }
 
-    toggleShareMenu = () => {
+    toggleShareMenu(){
         const {expanded} = this.state;
         if(expanded){
             this.setState({ expanded: false })
@@ -24,7 +23,7 @@ class ShareButton extends Component{
         const { expanded } = this.state;
         return(
             <ShareToggle> 
-                <ShareLink className={expanded ? 'expanded' : ''} onClick={this.toggleShareMenu} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
+                <ShareLink className={expanded ? 'expanded' : ''} onClick={() => this.toggleShareMenu} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
 
                 <SocialLinks className={expanded ? 'expanded' : ''}> 
                     <SocialIcon onClick={() => {window.open("https://twitter.com")}} className="fa fa-twitter"/>
@@ -38,7 +37,6 @@ class ShareButton extends Component{
     
 }
 
-export default ShareButton
 const ShareToggle = styled.div`
     position: absolute;
     display: flex;

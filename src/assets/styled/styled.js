@@ -1,5 +1,4 @@
 
-import theme from './theme'
 import {css} from 'styled-components'
 
 const sizes = { 
