@@ -29,6 +29,7 @@
     "gatsby-source-wordpress": "^2.0.85",
     "gatsby-transformer-remark": "^1.7.41",
     "gatsby-transformer-sharp": "^1.6.24",
+    "google-maps-react": "^2.0.2",
     "lodash": "^4.17.10",
     "lodash-webpack-plugin": "^0.11.5",
     "normalize.css": "^8.0.0",

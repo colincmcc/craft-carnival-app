@@ -38,11 +38,7 @@ export default class ShareButton extends Component{
 }
 
 const ShareToggle = styled.div`
-    position: absolute;
     display: flex;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(calc(-50% - 62px));
     flex-direction: row;
     margin: auto;
     font-family: 'Eczar', serif;
@@ -52,11 +48,15 @@ const ShareToggle = styled.div`
     cursor: pointer;
     z-index: 1000;
     margin: 24px 0;
+    @media(min-width: 1280px){
+        font-size: 2em;
+    }
 
 `
 const SocialIcon = styled.i`
 
     padding: 10px;
+    margin: auto;
     aria-hidden: true;
     &:hover{color: #C56543}
     &.alt{
@@ -68,32 +68,38 @@ const SocialIcon = styled.i`
 `
 
 const SocialLinks = styled.div`
-display: flex;
-flex-direction: row;
-width: 125px;
+    display: flex;
+    flex-direction: row;
+    width: 126px;
+    height
     vertical-align: baseline;
-    transform: scaleX(0);
+    transform: scaleX(0) translateX(-63px);
     transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition: 0.5s;
     transform-origin: right;
     text-align: center;
+    
     &.expanded{
-        transform: scaleX(1);
+        transform: scaleX(1) translateX(0);
     }
 
 `
 const ShareLink = styled.div`
-transform: translateX( 125px);
-transition: 0.5s;
-font-family: 'Eczar', serif;
-font-size: 1.25em;
-font-weight: 900;
-text-shadow: 0px 2px 0 #C56543;
-text-align: center;
-&.expanded{
-    transform: translateX(0);
-}
-&:hover{outline:2px solid #C56543}
+    transform: translateX( 63px);
+    transition: 0.5s;
+    font-family: 'Eczar', serif;
+    font-size: 1.25em;
+    font-weight: 900;
+    height: auto;
+    text-shadow: 0px 2px 0 #C56543;
+    text-align: center;
+    
+    &.expanded{
+        transform: translateX(0);
+    }
+    &:hover{
+        outline:2px solid #C56543;
+    }
 
 
 `

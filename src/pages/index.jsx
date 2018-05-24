@@ -35,7 +35,7 @@ export default class Index extends React.Component {
           <VendorWrapper>
             <VendorList alt="" slug="brews" sectionTitle="Breweries" brews={this.props.data.allWordpressWpBreweries.edges} />
             <BandList alt="one" slug="bands" sectionTitle="Sideshows" brews={this.props.data.allWordpressAcfBands.edges} />
-            <VendorList alt="" slug="vendors" sectionTitle="Vendors" brews={this.props.data.allWordpressWpRetails.edges} />
+            <VendorList alt="" slug="vendors" sectionTitle="Vendors" brews={this.props.data.allWordpressAcfRetails.edges} />
 
           </VendorWrapper>
 
@@ -99,7 +99,12 @@ const HeaderWrapper = styled.section`
     width: 100%;
     margin: 60px auto 0 auto;
     z-index: 2;
-   
+    @media screen and (orientation: landscape){
+      @media(max-width: 763px){
+        height: 100vmin;
+
+      }
+  }   
 `
 
 const TicketWrapper = styled.section`
@@ -127,70 +132,25 @@ const VendorWrapper = styled.div`
 const FooterWrapper = styled.div`
 grid-area: footer;
 overflow: hidden;
-height: 100vh;
+height: 100%;
+
+@media(min-width: 763px){
+  height: 100vh;
+}
 `
 
 
   /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query IndexQuery {
-    allWordpressPage(sort:{fields:[menu_order]}){
-    edges{
-      node{
-        slug
-        template
-        menu_order
-      }
-    }
-  }
-    wordpressWpApiMenusMenusItems(slug: {eq:"eventbrite-main-menu"}){
-     items {
-          wordpress_id
-          order
-          title
-          url
-          attr
-          target
-          object_slug
-          type
-          type_label
-        }
-  }
-  wordpressWpHomepageItems(slug: {eq:"home"}){
-    id
-    slug
-		acf{
-      bgimg {
-        wordpress_id
-        title
-        caption
-        mime_type
-        source_url
-      }
-      header_logo {
-        wordpress_id
-        alt
-        title
-        caption
-        description
-        mime_type
-        url
-        width
-        height
-      }
-      trailing_image
-      header_text
-    }
-  }
-  allWordpressAcfBands{
-    edges{
+    allWordpressAcfRetails{
+     edges{
       node{
         acf{
           name
           logo {
-            source_url
-            id
-            description
+           source_url
+          wordpress_id
           }
           website_url
           facebook_url
@@ -201,15 +161,14 @@ export const pageQuery = graphql`
       }
     }
   }
-  allWordpressWpRetails{
-    edges{
+  allWordpressAcfBands{
+     edges{
       node{
         acf{
           name
           logo {
-            url
-            wordpress_id
-            description
+           source_url
+          wordpress_id
           }
           website_url
           facebook_url
@@ -226,7 +185,7 @@ export const pageQuery = graphql`
         acf{
           name
           logo {
-           url
+           source_url
           wordpress_id
           }
           website_url

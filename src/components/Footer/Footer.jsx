@@ -10,16 +10,23 @@ export default class Footer extends Component{
             <FooterLeft>
               <SectionTitle> Contact </SectionTitle>
               <ContactInfo>
-                <ul>
-                  <li>Name: Colin McCullough</li>
-                  <li>Address: 140 Andrew Drive, Pittsburgh PA 15275</li>
-                  <li>Phone: 412.490.9080</li>
-                  <li>Email: cmccullough@industrypgh.com</li>
-                </ul>
+                
+                <li>Name: Colin McCullough</li>
+                <li>Address: 140 Andrew Drive, Pittsburgh PA 15275</li>
+                <li>Phone: 412.490.9080</li>
+                <li>Email: cmccullough@industrypgh.com</li>
+              
               </ContactInfo>
             </FooterLeft>
             <FooterRight>
               <SectionTitle> Venue </SectionTitle>
+              <VenueInfo> Industry Public House - North Fayette</VenueInfo>
+
+
+              <GoogleMap><iframe title="googleMap" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12144.226259666433!2d-80.176892!3d40.451885!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x576a79e4095bf3e6!2sIndustry+Public+House+-+North+Fayette!5e0!3m2!1sen!2sus!4v1527176479540"  width="100%" height="450px" /></GoogleMap>
+              <ContactInfo> 
+              </ContactInfo>
+
             </FooterRight>
           </FooterWrapper>
 
@@ -28,7 +35,7 @@ export default class Footer extends Component{
 }
 
 const FooterWrapper = styled.section`
-height: 80vh;
+height: 100%;
 width: 100vw;
 background-color: #252525;
 padding: 2rem;
@@ -69,11 +76,13 @@ margin: auto;
 
     }
 `
-const ContactInfo = styled.div`
+const ContactInfo = styled.ul`
 display: flex;
 flex-direction: column;
 width: 100%;
 text-align: left;
+color: #568FB0;
+font-size: 1.25em;
 
 @media(min-width: 763px){
     width: 50%;
@@ -88,6 +97,7 @@ display: flex;
 flex-direction: column;
 width: 100%;
 height: 100%;
+min-height: 800px;
 
 text-align: center;
 margin: auto;
@@ -95,14 +105,22 @@ margin: auto;
 @media(min-width: 763px){
     width: 50%;
     float: left;
+    min-height: 1000px;
 
     }
 
 `
-const Venue = styled.div`
+const GoogleMap = styled.div`
+display: flex;
+width: 100%;
+padding: .5em;
+height: 450px;
 
 `
 
-const Contact = styled.div`
-
+const VenueInfo = styled.div`
+color: #568FB0;
+font-size: 1.25em;
+text-align: left;
+padding: 1em 0;
 `

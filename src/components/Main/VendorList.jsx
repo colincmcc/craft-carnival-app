@@ -34,7 +34,7 @@ export default class VendorList extends Component{
             webUrl: brew.node.acf.website_url,
             fbUrl: brew.node.acf.facebook_url,
             twitterUrl: brew.node.acf.twitter_url,
-            imgUrl: brew.node.acf.logo.url,
+            imgUrl: brew.node.acf.logo.source_url,
             id: brew.node.acf.logo.wordpress_id
           })
         })
@@ -62,9 +62,8 @@ export default class VendorList extends Component{
         
         return(
           <BreweryWrapper className={alt} id={slug} >
-            <header>
-              <SectionTitle className={alt}>{sectionTitle}</SectionTitle>
-            </header> 
+            
+            <SectionTitle className={alt}>{sectionTitle}</SectionTitle>
             <BreweryGrid  className={alt}>
               {breweryItems.map((brewItem, index)=> (
                 <BreweryContainer>
@@ -111,6 +110,7 @@ const BreweryWrapper = styled.section`
     display: flex;
     flex-direction: column;
     z-index: 4;
+    min-height: 90vh;
     &.one{
         float: left;
         background-color: #196591;
@@ -148,26 +148,21 @@ const BreweryWrapper = styled.section`
 const BreweryGrid = styled.div`
     display: grid;
     justify-content: space-evenly;
-    padding: 1em 2em;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 2em 2em;
+    grid: auto / repeat(auto-fit, minmax(100px, 1fr));
     grid-gap: 5px;
-    height: 100%;
     width: 100%;  
-    &.one{
-        grid-auto-rows: minmax(10vh, auto);
-        grid-template-columns: repeat(auto-fit, 1fr);
-    }
-    &.vertical{
-        margin-top: 2rem;
-    }
+    @media(min-width: 763px){
+        grid: auto / repeat(4, minmax(100px, 1fr));
+    
 `
 const SectionTitle = styled.h2`
     font-weight: 400;
     font-size: 3rem;
     font-family: 'Fruktur', cursive;
     float: left;
-    padding-top: 1em;
     padding-left: 1em;
+    padding-bottom: 1em;
     text-shadow: 0 0 42px #FFC176;
     transform: skewY(-11.5deg);
     color: #252525;
@@ -176,23 +171,13 @@ const SectionTitle = styled.h2`
 
 
     }
-    &.vertical{
-        transform: skewY(0);
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        float: right;
-        position: absolute;
-        right: 20px;
-        padding: 0;
-        margin: 0;
-    }
+    
     @media(min-width: 763px){
       font-size: 4em;
-  }
-  @media screen and (min-width: 1280px) {
-      font-size: 6rem;
-
-  }
+    }
+    @media screen and (min-width: 1280px) {
+        font-size: 6rem;
+    }
 `
 
 const SocialIcon = styled.span`
@@ -206,22 +191,36 @@ const BreweryContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    max-width: 150px;
+    max-height: 150px;
+    @media(min-width: 763px){
+        max-width: 200px;
+        max-height: 200px;
+    }
     &:hover{outline:2px solid #C56543}
 `
 const BreweryLink = styled.div`
     display: flex;
     width: 100%;
-    height: 100%;
-    
+    height: 100px;
+
     @media(min-width: 763px){
         font-size: 3em;
+        height: 100%;
+        
     }
 `
 
 const BreweryImg = styled.img`
     display: block;
-    max-width: 100%;
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
     margin: auto;
+    @media(min-width: 763px){
+        max-width: 200px;
+        max-height: 200px;
+    }
     &:hover{opacity:.8}
 
 `

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Scrollspy from 'react-scrollspy'
 
-import ShareButton from '../common/Share_Button'
 import IndustryLogo from '../../assets/images/Header-Logo.png'
 import Lightbulb from '../../assets/images/Lightbulb.svg'
 import Scroll from '../../assets/scripts/Scroll.js'
@@ -28,13 +27,14 @@ export default class Nav extends Component{
         const {isActive} = this.state;
         return(
                 <NavContent id="nav">
-                    <HeaderLogo/>
+                    <HeaderLogo href="http://IndustryPGH.com"/>
                     <NavBarWide>
-                        <Scrollspy className="scroll-spy-ul" items={['tickets', 'brews', 'bands', 'vendors', 'info']} currentClassName="is-current">
+                        <Scrollspy className="scroll-spy-ul" items={['tickets', 'brews', 'bands', 'vendors', 'info']}  currentClassName="is-current">
                             <NavListItem><Scroll type="id" element="tickets"><NavLink>TICKETS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="brews"><NavLink>BREWS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="bands"><NavLink>BANDS</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="vendors"><NavLink>VENDORS</NavLink></Scroll></NavListItem>
+                            <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
                             <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
                         </Scrollspy>
                     </NavBarWide>
@@ -87,6 +87,10 @@ display: none;
 const NavListItem = styled.li`
     cursor: pointer;
     text-align: center;
+    &.float-right{
+        float: right;
+        text-align: right;
+    }
 `
 const NavLink = styled.a`
     display: inline-flex;

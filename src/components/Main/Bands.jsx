@@ -156,12 +156,7 @@ const BandGrid = styled.div`
     height: 100%;
     width: 100%;  
     grid-template-columns: repeat(auto-fit, 1fr);
-    &.one{
-
-    }
-    &.vertical{
-        margin-top: 2rem;
-    }
+   
     @media(min-width: 763px){
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
@@ -172,20 +167,9 @@ const SectionTitle = styled.h2`
     font-family: 'Fruktur', cursive;
     text-shadow: 0 0 42px #FFC176;
     color: #252525;
+    margin: .25em 0;
     &.one{
         text-shadow: 0 0 42px #568EB0;
-
-
-    }
-    &.vertical{
-        transform: skewY(0);
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        float: right;
-        position: absolute;
-        right: 20px;
-        padding: 0;
-        margin: 0;
     }
     @media(min-width: 763px){
         font-size: 4em;
@@ -207,7 +191,6 @@ const BandContainer = styled.div`
     flex-direction: column;
     width: 100%;
     border-radius: 15px;
-
     &:hover{outline:2px solid #C56543}
    
 `
@@ -217,7 +200,7 @@ const BandLink = styled.div`
     width: 100%;
     height: 100%;
     flex-direction: column;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
     @media(min-width: 763px){
         font-size: 3em;
     }

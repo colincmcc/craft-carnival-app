@@ -13,16 +13,21 @@ export default class Header extends Component{
         const {homeEdge} = this.props
 
         return(
-            <LogoWrapper id="header">
-                <Logo id="logoWrapper">
+          <LogoWrapper id="header">
+            
+            <Logo id="logoWrapper">
+              
+              <LogoImg src={ccLogo} alt="" />
+              
+              <BottomLogo>
+                <LogoImg className="alt1"  src={june16} /> <LogoImg className="alt2"  src={twoeight} />
+              </BottomLogo>
 
-                    <LogoImg src={ccLogo} alt="" />
-                    <BottomLogo>
-                        <LogoImg className="alt1"  src={june16} /> <LogoImg className="alt2"  src={twoeight} />
-                    </BottomLogo>
-                </Logo>
-                <ShareButton />
-            </LogoWrapper>
+            </Logo>
+
+            <ShareWrapper> <ShareButton /> </ShareWrapper>
+
+          </LogoWrapper>
 
         )
     }
@@ -32,6 +37,15 @@ const LogoWrapper = styled.div`
 display: flex;
 z-index: 1000;
 position: relative;
+padding-bottom: 64px;
+
+`
+const ShareWrapper = styled.div`
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+
 `
 const HeaderBg = styled.img`
 position: absolute;
@@ -98,6 +112,7 @@ const BottomLogo = styled.div`
     margin: auto;
     position: relative;
     top: 0;
+    
     @media(min-width: 763px){
         top: -30px;
         max-width: 75%
@@ -110,6 +125,7 @@ const LogoImg = styled.img`
     margin: auto;
     display: block;
     animation: ${LogoDrop} 1s;
+   
     @media(min-width: 763px){
        
         width: 50vw;
@@ -121,7 +137,7 @@ const LogoImg = styled.img`
         max-width: 30%;
         float: left;
         position: relative;
-        left: 20px;
+        left: 0px;
     }
     &.alt2{
         animation: ${LogoDrop} 1s 1s;
@@ -130,6 +146,6 @@ const LogoImg = styled.img`
         max-width: 30%;
         float: right;
         position: relative;
-        right: 20px;
+        right: 0px;
     }
 `
