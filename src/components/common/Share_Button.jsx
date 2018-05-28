@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import {FacebookShareButton, RedditShareButton}	from 'react-share'
 
 
 export default class ShareButton extends Component{
@@ -22,16 +23,25 @@ export default class ShareButton extends Component{
     render(){
         const { expanded } = this.state;
         return(
-            <ShareToggle> 
-                <ShareLink className={expanded ? 'expanded' : ''} onClick={() => this.toggleShareMenu()} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
+          <ShareToggle> 
+            <ShareLink className={expanded ? 'expanded' : ''} onClick={() => this.toggleShareMenu()} >INVITE <SocialIcon className="alt fa fa-share-alt" /> </ShareLink>
 
-                <SocialLinks className={expanded ? 'expanded' : ''}> 
-                    <SocialIcon onClick={() => {window.open("https://twitter.com")}} className="fa fa-twitter"/>
-                    <SocialIcon onClick={() => {window.open("https://facebook.com")}} className="fa fa-facebook"/>
-                    <SocialIcon onClick={() => {window.open("https://instagram.com")}} className="fa fa-instagram"/>
-                </SocialLinks>
-                
-            </ShareToggle>
+            <SocialLinks className={expanded ? 'expanded' : ''}> 
+              <div>
+                <SocialIcon onClick={() => {window.open("https://twitter.com/intent/tweet?text=Join%20me%20at%20the%20Craft%20Carnival%20Beer%20and%20Spirit%20Festival!&url=https%3A%2F%2FCraftCarnivalPGH.com%2F&&hashtags=craftcarnival,beerfest")}} className="twitter-share-button fa fa-twitter" />
+              </div>
+              
+              <FacebookShareButton url="https://CraftCarnivalPGH.com" quote="Craft Carnival Beer & Spirit Fest">
+                <SocialIcon className="fa fa-facebook" />
+              </FacebookShareButton>
+
+              <RedditShareButton url="https://CraftCarnivalPGH.com" title="PGH's Craft Carnival Beer & Spirit Fest" windowWidth={660} windowHeight={460}>
+                <SocialIcon className="fa fa-reddit" />
+              </RedditShareButton>
+
+            </SocialLinks>
+              
+          </ShareToggle>
         )
     }
     

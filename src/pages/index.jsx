@@ -24,10 +24,9 @@ export default class Index extends React.Component {
           </NavWrapper>
           {/* grid-area: header */}
           <HeaderWrapper>
-            <Header homeEdge={this.props.data.wordpressWpHomepageItems} />
+            <Header />
           </HeaderWrapper>
           {/* grid-area: main */}
-          <div id="tickets" />
           <TicketWrapper id="tickets">
             <Tickets />
           </TicketWrapper>
