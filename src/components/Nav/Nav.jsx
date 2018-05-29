@@ -26,31 +26,31 @@ export default class Nav extends Component{
     render(){
         const {isActive} = this.state;
         return(
-                <NavContent id="nav">
-                    <HeaderLogo href="http://IndustryPGH.com"/>
-                    <NavBarWide>
-                        <Scrollspy className="scroll-spy-ul" items={['tickets', 'brews', 'bands', 'vendors', 'info']}  currentClassName="is-current">
-                            <NavListItem><Scroll type="id" element="tickets"><NavLink>TICKETS</NavLink></Scroll></NavListItem>
-                            <NavListItem><Scroll type="id" element="brews"><NavLink>BREWS</NavLink></Scroll></NavListItem>
-                            <NavListItem><Scroll type="id" element="bands"><NavLink>BANDS</NavLink></Scroll></NavListItem>
-                            <NavListItem><Scroll type="id" element="vendors"><NavLink>VENDORS</NavLink></Scroll></NavListItem>
-                            <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
-                        </Scrollspy>
-                    </NavBarWide>
-                    <NarrowTitle> Craft Carnival 2018 </NarrowTitle>
-                    <NavButton className={isActive ? "isActive fa fa-bars fa-2x" : "fa fa-bars fa-2x"} onClick={() => this.burgerToggle()}/>
-                    <NavBarNarrow>
-                        <NavMenuNarrow id="navNarrow" className={isActive ? "isActive" : ""}>
-                            <Scrollspy className="scroll-spy-ul narrow" items={['tickets', 'brews', 'bands', 'vendors', 'info']} currentClassName="is-current">
-                                <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#tickets">TICKETS</NavNarrowButton></SkewedBlock></li>
-                                <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#brews">BREWS</NavNarrowButton></SkewedBlock></li>
-                                <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#bands">BANDS</NavNarrowButton></SkewedBlock></li>
-                                <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#vendors">VENDORS</NavNarrowButton></SkewedBlock></li>
-                                <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#info">INFO</NavNarrowButton></SkewedBlock></li>
-                            </Scrollspy>
-                        </NavMenuNarrow>
-                    </NavBarNarrow>
-                </NavContent>
+          <NavContent id="nav">
+            <HeaderLogo href="http://IndustryPGH.com" />
+            <NavBarWide>
+              <Scrollspy className="scroll-spy-ul" items={['tickets', 'brews', 'bands', 'vendors', 'info']}  currentClassName="is-current">
+                <NavListItem><Scroll type="id" element="tickets"><NavLink>TICKETS</NavLink></Scroll></NavListItem>
+                <NavListItem><Scroll type="id" element="brews"><NavLink>BREWS</NavLink></Scroll></NavListItem>
+                <NavListItem><Scroll type="id" element="bands"><NavLink>BANDS</NavLink></Scroll></NavListItem>
+                <NavListItem><Scroll type="id" element="vendors"><NavLink>VENDORS</NavLink></Scroll></NavListItem>
+                <NavListItem><Scroll type="id" element="info"><NavLink>INFO</NavLink></Scroll></NavListItem>
+              </Scrollspy>
+            </NavBarWide>
+            <NarrowTitle> Craft Carnival 2018 </NarrowTitle>
+            <NavButton className={isActive ? "isActive fa fa-bars fa-2x" : "fa fa-bars fa-2x"} onClick={() => this.burgerToggle()} />
+            <NavBarNarrow>
+              <NavMenuNarrow id="navNarrow" className={isActive ? "isActive" : ""}>
+                <Scrollspy className="scroll-spy-ul narrow" items={['tickets', 'brews', 'bands', 'vendors', 'info']} currentClassName="is-current">
+                  <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#tickets">TICKETS</NavNarrowButton></SkewedBlock></li>
+                  <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#brews">BREWS</NavNarrowButton></SkewedBlock></li>
+                  <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#bands">BANDS</NavNarrowButton></SkewedBlock></li>
+                  <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#vendors">VENDORS</NavNarrowButton></SkewedBlock></li>
+                  <li width="100%"><SkewedBlock><NavNarrowButton  onClick={() => this.burgerToggle()} href="#info">INFO</NavNarrowButton></SkewedBlock></li>
+                </Scrollspy>
+              </NavMenuNarrow>
+            </NavBarNarrow>
+          </NavContent>
         )
     }
 }

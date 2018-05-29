@@ -17,7 +17,7 @@ export default class Tickets extends Component{
               <SectionTitle>What's New</SectionTitle>
               <About>
                 <AboutItem>SIDESHOW ACTS</AboutItem>
-                <AboutItem>HUGE GRANDE PRIZES</AboutItem>
+                <AboutItem>UNIQUE GRAND PRIZES</AboutItem>
                 <AboutItem>FOOD TRUCKS</AboutItem>
                 <AboutItem>BLACKSMITHING</AboutItem>
                 <AboutItem>ART VENDORS</AboutItem>
