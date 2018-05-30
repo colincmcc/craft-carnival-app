@@ -26,7 +26,7 @@ export default class Tickets extends Component{
             </LeftTicket>
             <RightTicket>
               <EventbritePurchase>
-                <iframe title="eventbritePurchase" src="https://www.eventbrite.com/checkout-external?eid=44955026695&amp;parent=http%3A%2F%2Fcraftcarnivalpgh.com%3A8000%2F" sandbox="allow-modals allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox" data-automation="checkout-widget-iframe-44955026695" allowtransparency="true" scrolling="auto" width="100%" height="100%" frameborder="0" />
+                <iframe title="eventbritePurchase" src="https://www.eventbrite.com/checkout-external?eid=44955026695&amp;parent=http%3A%2F%2Fcraftcarnivalpgh.com" sandbox="allow-modals allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox" data-automation="checkout-widget-iframe-44955026695" allowtransparency="true" scrolling="auto" width="100%" height="100%" frameborder="0" />
               </EventbritePurchase>
             </RightTicket>
           </TicketContent>

@@ -130,7 +130,7 @@ z-index: 1001;
 transition: .5s;
 @media(min-width: 736px){
     display: none;
-
+    visibility: hidden;
 }
 &.isActive{
     color: black;
