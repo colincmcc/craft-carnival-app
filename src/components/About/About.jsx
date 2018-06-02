@@ -24,7 +24,7 @@ export default class About extends Component {
         />
         <Description id="aboutDescription">
           <AboutLi>
-            The Craft Carnival is a unique Craft Spirits festival, that offers
+            The Craft Carnival is a unique Craft Spirits festival that offers
             more than the usual beerfest. More than just music & beer, we
             present an experience.
           </AboutLi>
@@ -40,9 +40,9 @@ export default class About extends Component {
           </AboutLi>
           <AboutLi className="item">
             Raffled grand prizes that range from all inclusive beercations to
-            prize packages form your favorite brewery.
+            prize packages from your favorite brewery.
           </AboutLi>
-          <AboutLi className="item">Access to very limited beers.</AboutLi>
+          <AboutLi className="item">Access to very exclusive beers.</AboutLi>
         </Description>
       </AboutContent>
     );
