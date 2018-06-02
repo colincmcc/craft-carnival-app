@@ -30,29 +30,30 @@ export default class Index extends React.Component {
           </HeaderWrapper>
 
           {/* grid-area: about */}
-          <AboutWrapper id="tickets">
+          <AboutWrapper id="about">
             <About />
             <Gallery />
           </AboutWrapper>
 
-          <TicketWrapper>
+          <TicketWrapper id="tickets">
             <Tickets />
           </TicketWrapper>
 
           {/* grid-area: main */}
           <VendorWrapper>
-            <VendorList
-              alt=""
-              slug="brews"
-              sectionTitle="Breweries"
-              brews={this.props.data.allWordpressWpBreweries.edges}
-            />
             <BandList
               alt="one"
               slug="bands"
               sectionTitle="Sideshows"
               brews={this.props.data.allWordpressAcfBands.edges}
             />
+            <VendorList
+              alt=""
+              slug="brews"
+              sectionTitle="Breweries"
+              brews={this.props.data.allWordpressWpBreweries.edges}
+            />
+
             <VendorList
               alt=""
               slug="vendors"
@@ -115,7 +116,6 @@ const HeaderWrapper = styled.section`
   grid-area: header;
   display: grid;
   overflow: visible;
-  padding: 2rem;
   height: 85vh;
   width: 100%;
   margin: 60px auto 0 auto;

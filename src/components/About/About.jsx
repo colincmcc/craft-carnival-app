@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { CSSTransition } from "react-transition-group";
 import Waypoint from "react-waypoint";
 import fireBreather from "../../assets/images/duotone_fire.png";
 
@@ -16,6 +15,7 @@ export default class About extends Component {
           }}
         />
         <Waypoint
+          topOffset="100px"
           onEnter={() => {
             document
               .getElementById("aboutDescription")
@@ -56,7 +56,7 @@ const AboutContent = styled.div`
   background-size: cover;
   flex-direction: column;
   min-height: 90vh;
-  padding: 2rem;
+  padding: 2rem 4rem;
   color: #252525;
 `;
 
@@ -94,8 +94,10 @@ const Description = styled.ul`
   flex-direction: column;
   margin: auto;
   font-size: 1rem;
-  padding: 4rem;
+  padding: 2rem 0;
   @media (min-width: 763px) {
+    padding: 4rem;
+    width: 75%;
     font-size: 2rem;
     transform: translateX(-100%);
     opacity: 0;
@@ -107,9 +109,8 @@ const Description = styled.ul`
   }
 `;
 const AboutLi = styled.li`
-  padding: 1rem;
   font-family: "Concert One", cursive;
   &.item {
-    padding: 2rem;
+    padding: 1rem 2rem;
   }
 `;

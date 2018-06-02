@@ -35,6 +35,7 @@ const LogoWrapper = styled.div`
   position: relative;
 `;
 const ShareWrapper = styled.div`
+  display: flex;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -78,6 +79,8 @@ const Logo = styled.div`
   flex-direction: column;
   position: absolute;
   margin: auto;
+  padding-top: 80px;
+  padding-bottom: 100px;
   width: 100%;
   left: 50%;
   top: 50%;
