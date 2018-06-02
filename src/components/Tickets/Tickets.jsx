@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+<<<<<<< HEAD
 import fireBreather from "../../assets/images/duotone_fire.png";
 
+=======
+>>>>>>> 0b654e9f585fa4ff1f7a5c7fda74ac4aa58b447e
 export default class Tickets extends Component {
   render() {
     return (
       <TicketContent>
         <LeftTicket>
+<<<<<<< HEAD
           <SectionTitle>What's New</SectionTitle>
+=======
+          <SectionTitle>Buy Tickets</SectionTitle>
+>>>>>>> 0b654e9f585fa4ff1f7a5c7fda74ac4aa58b447e
           <About>
             <AboutItem>SIDESHOW ACTS</AboutItem>
             <AboutItem>UNIQUE GRAND PRIZES</AboutItem>
@@ -40,8 +47,12 @@ export default class Tickets extends Component {
 
 const TicketContent = styled.div`
   display: flex;
+<<<<<<< HEAD
   background-image: url(${fireBreather});
   background-size: cover;
+=======
+
+>>>>>>> 0b654e9f585fa4ff1f7a5c7fda74ac4aa58b447e
   flex-direction: column;
   padding: 2rem;
   @media (min-width: 763px) {
