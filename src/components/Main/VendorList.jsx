@@ -52,6 +52,13 @@ export default class VendorList extends Component {
   render() {
     const breweryItems = this.buildBrewList();
     const { sectionTitle, slug, alt } = this.props;
+    const featuredVendor = breweryItems.filter(
+      brew => brew.name === "Two Roads"
+    );
+    let hidden = false;
+    if (featuredVendor.length === 0) hidden = true;
+    console.log("Hello world!");
+    console.log(featuredVendor);
     return (
       <BreweryWrapper className={alt}>
         <SectionTitle id={slug} className={alt}>
@@ -63,9 +70,27 @@ export default class VendorList extends Component {
             document.getElementById(slug).classList.add("entered");
           }}
         />
+        <FeaturedBrewery className={hidden ? "hidden" : ""}>
+          {featuredVendor.map(featured => (
+            <BreweryContainer className="featured">
+              <BreweryLink
+                id={featured.id}
+                onClick={e => this.clickHandler(e, 500)}
+              >
+                <BreweryImg className="featured" src={featured.imgUrl} />
+              </BreweryLink>
+            </BreweryContainer>
+          ))}
+          <AboutFeature>
+            {" "}
+            Featuring Two Roads Brewing! New to Pittsburgh, Two Roads is rated
+            one of the top 10 breweries in the U.S. Check out their booth at the
+            Craft Carnival!{" "}
+          </AboutFeature>
+        </FeaturedBrewery>
         <BreweryGrid className={alt}>
           {breweryItems.map((brewItem, index) => (
-            <BreweryContainer>
+            <BreweryContainer key={brewItem.id}>
               <Modal
                 classNames={{
                   closeButton: "custom-closeButton",
@@ -205,6 +230,31 @@ const SocialIcon = styled.span`
   }
 `;
 
+const FeaturedBrewery = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 75%;
+  padding: 2em;
+  border: 2px solid black;
+  @media (min-width: 763px) {
+    flex-direction: row;
+    max-width: 50%;
+  }
+  &.hidden {
+    display: none;
+  }
+`;
+
+const AboutFeature = styled.p`
+  display: flex;
+  margin: auto;
+  padding: 1em;
+  font-family: "Source Sans Pro", sans-serif;
+  @media (min-width: 763px) {
+    font-size: 1.5em;
+  }
+`;
 const BreweryContainer = styled.div`
   display: flex;
   width: 100%;
@@ -218,6 +268,9 @@ const BreweryContainer = styled.div`
   }
   &:hover {
     outline: 2px solid #c56543;
+  }
+  &.featured {
+    margin: auto;
   }
 `;
 const BreweryLink = styled.div`
@@ -238,6 +291,10 @@ const BreweryImg = styled.img`
   @media (min-width: 763px) {
     max-width: 200px;
     max-height: 200px;
+    &.featured {
+      max-width: 300px;
+      max-height: 300px;
+    }
   }
   &:hover {
     opacity: 0.8;

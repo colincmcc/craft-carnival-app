@@ -27,7 +27,11 @@ export default class Nav extends Component {
     const { isActive } = this.state;
     return (
       <NavContent id="nav">
-        <HeaderLogo href="http://IndustryPGH.com" />
+        <HeaderLogo
+          onClick={() => {
+            window.open("http://IndustryPGH.com");
+          }}
+        />
         <NavBarWide>
           <Scrollspy
             className="scroll-spy-ul"
@@ -166,6 +170,9 @@ const HeaderLogo = styled.div`
   background-size: contain;
   height: 60px;
   margin-left: 1rem;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 const NavBarWide = styled.div`
   display: none;
